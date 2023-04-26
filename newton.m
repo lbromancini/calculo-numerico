@@ -1,16 +1,15 @@
-% ex: e) f(x) = exp(x)+cos(x)-5 / x0 = 2 / e = 10^-3
-% R: 1.6190
+% M√©todo de Newton
 
-% Input da funÁ„o, sua derivada, x0 e toler‚ncia 
-syms x % Declara x como vari·vel simbÛlica
-f = input('insira a equaÁ„o: ')
+% Input da fun√ß√£o, sua derivada, x0 e toler√¢ncia 
+syms x % Declara x como vari√°vel simb√≥lica
+f = input('insira a equa√ß√£o: ')
 g = diff(f, x)
 h = diff(g, x)
 x0 = input('Insira o valor para x0: ')
-E = input('Insira o valor para a toler‚ncia: ')
+E = input('Insira o valor para a toler√¢ncia: ')
 
-f = inline(f,'x') % Torna possÌvel utilizar a funÁ„o no cÛdigo,
-g = inline(g,'x') % transformando a string em uma funÁ„o
+f = inline(f,'x') % Torna poss√≠vel utilizar a fun√ß√£o no c√≥digo,
+g = inline(g,'x') % transformando a string em uma fun√ß√£o
 h = inline(h,'x')
 
 fx0 = f(x0)
@@ -18,13 +17,13 @@ gx0 = g(x0)
 hx0 = h(x0)
 
 if fx0*hx0 < 0
-        fprintf('N„o converge')
+        fprintf('N√£o converge')
         break
 else
 
 x1 = x0 - (fx0/gx0)
 
-% Repete o mÈtodo atÈ o critÈrio de parada ser cumprido
+% Repete o m√©todo at√© o crit√©rio de parada ser cumprido
 while (x1 ~= x0) 
  
     x0 = x1
@@ -37,5 +36,5 @@ while (x1 ~= x0)
 end
 
 end
-fprintf('O valor de x È %.5f', x1)
+fprintf('O valor de x √© %.5f', x1)
 
