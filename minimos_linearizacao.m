@@ -1,3 +1,5 @@
+% Ajuste de curvas pelo m√©todo dos m√≠nimos quadrados
+
 x = input('Insira os valores de x: ')
 y = input('Insira os valores de y: ')
 
@@ -35,16 +37,16 @@ den =((n*somaXT2-(somaXT^2))*(n*somaYT2-(somaYT^2)))^(1/2);
 r = num / den;
 r2 = r^2;
 
-fprintf('A equaÁ„o È %f.6x + %.6f \n', a1, a0)
-fprintf('O valor de r È %.5f \n', r)
+fprintf('A equa√ß√£o √© %f.6x + %.6f \n', a1, a0)
+fprintf('O valor de r √© %.5f \n', r)
 
-syms X; % Declara a vari·vel simbÛlica
-f = a1*X + a0; % Declara a funÁ„o utilizando os valores de a1 e a0
-fx = inline(f,'X'); % Torna a funÁ„o utiliz·vel
-fplot(fx,[-100,100],'b'); % Plota a funÁ„o fx
-hold on % Permite que mais de uma funÁ„o seja plotada
+syms X; % Declara a vari√°vel simb√≥lica
+f = a1*X + a0; % Declara a fun√ß√£o utilizando os valores de a1 e a0
+fx = inline(f,'X'); % Torna a fun√ß√£o utiliz√°vel
+fplot(fx,[-100,100],'b'); % Plota a fun√ß√£o fx
+hold on % Permite que mais de uma fun√ß√£o seja plotada
 plot(x,y,'*-');
 hold on
 plot(xn,yn,'*-');
-grid on; % Liga a grade do gr·fico
-hold off % Impede que novas funÁıes sejam plotadas
+grid on; % Liga a grade do gr√°fico
+hold off % Impede que novas fun√ß√µes sejam plotadas
