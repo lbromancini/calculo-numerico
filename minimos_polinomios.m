@@ -1,10 +1,12 @@
+% Ajuste de curvas pelo m√©todo dos m√≠nimos quadrados (polin√¥mios)
+
 x = input('Digite o valor de x: ');
 y = input('Digite o valor de y: ');
 
 n = 4;
 m = length(x);
 
-% Eleva os valores de x atÈ x^n
+% Eleva os valores de x at√© x^n
 for i=1:n % Percorre as linhas
     
     for j=1:m % Percorre as colunas
@@ -28,15 +30,15 @@ somaXN
 
 % Cria a matriz com a0, a1 e a2 para o escalonamento
 mat = [];
-cont = -1; % Contador que auxilia na geraÁ„o da matriz
+cont = -1; % Contador que auxilia na gera√ß√£o da matriz
 
-for i=1:3 % O valor fixo È 3 pois a matriz È sempre 3x3
+for i=1:3 % O valor fixo √© 3 pois a matriz √© sempre 3x3
     
    for j=1:3
       
        if i==1 && j==1
            
-           mat(i,j) = m; % O termo [1,1] da matriz È o n∞ de valores de x
+           mat(i,j) = m; % O termo [1,1] da matriz √© o n¬∞ de valores de x
            
        else
            
@@ -93,7 +95,7 @@ an = func_escalonamento(mat,b)
 % a2 = an(1)
 
 % Calculando o erro %
-% ymodelo e resÌduo
+% ymodelo e res√≠duo
 ymodelo = [];
 resid = [];
 
@@ -132,15 +134,15 @@ erro = erro^0.5;
 r2 = (st - sr)/st;
 r = r2^0.5;
 
-fprintf('A equaÁ„o resultante È %.4fx^2 + %.4fx + %.4f \n', an(3), an(2), an(1))
-fprintf('O erro È %.5f \n', erro)
-fprintf('O valor de r È %.5f \n', r)
+fprintf('A equa√ß√£o resultante √© %.4fx^2 + %.4fx + %.4f \n', an(3), an(2), an(1))
+fprintf('O erro √© %.5f \n', erro)
+fprintf('O valor de r √© %.5f \n', r)
 
-syms X; % Declara a vari·vel simbÛlica
-f = an(3)*X^2 + an(2)*X + an(1); % Declara a funÁ„o utilizando os valores de a1 e a0
-fx = inline(f,'X'); % Torna a funÁ„o utiliz·vel
-fplot(fx,[-100,100],'b'); % Plota a funÁ„o fx
-hold on % Permite que mais de uma funÁ„o seja plotada
+syms X; % Declara a vari√°vel simb√≥lica
+f = an(3)*X^2 + an(2)*X + an(1); % Declara a fun√ß√£o utilizando os valores de a1 e a0
+fx = inline(f,'X'); % Torna a fun√ß√£o utiliz√°vel
+fplot(fx,[-100,100],'b'); % Plota a fun√ß√£o fx
+hold on % Permite que mais de uma fun√ß√£o seja plotada
 plot(x,y,'*r');
-grid on; % Liga a grade do gr·fico
-hold off % Impede que novas funÁıes sejam plotadas
+grid on; % Liga a grade do gr√°fico
+hold off % Impede que novas fun√ß√µes sejam plotadas
