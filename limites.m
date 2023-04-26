@@ -1,23 +1,21 @@
-% ex: a) f(x) = x^4 -2x^3 -7x^2 +8x +12
-% fx = [ 1 -2 -7 8 12 ] 
-% R: pos: [8; 0.5669] neg: [-0,6; -3,8285]
+% Limites das ra√≠zes reais
 
-%fx = input('Insira os valores do polinomio: ')
-% fx = [-6 0 -9 4 -2]
-fx = [ 5 -6 0 -9 4 -7]
+fx = input('Insira os valores do polinomio: ')
+% exemplo: [-6 0 -9 4 -2]
+
 lim = input('Qual limite deseja calcular? ')
 
 m = length(fx)
 
 gx = fx % Armazena a funcao original 
 
-% PolinÙmios Auxiliares %
+% Polin√¥mios Auxiliares %
 
 if (lim == 'sup pos') % Limite Superior Positivo
     
 elseif (lim == 'inf pos') % Limite Inferior Positivo
     
-    faux = fx % Cria um polinÙmio auxiliar do mesmo tamanho que fx
+    faux = fx % Cria um polin√¥mio auxiliar do mesmo tamanho que fx
 
     for i=1:m % Inverte a ordem dos coeficientes no vetor
         
@@ -31,12 +29,12 @@ elseif (lim == 'inf neg') % Limite Inferior Negativo
     
     faux = fx 
 
-    for i=1:m % Inverte o sinal dos coef. com expoentes Ìmpares
+    for i=1:m % Inverte o sinal dos coef. com expoentes √≠mpares
     
-        if (mod(i,2) == 0) % se o resto da divis„o for 0, ou seja, par
+        if (mod(i,2) == 0) % se o resto da divis√£o for 0, ou seja, par
             faux(i) = -fx(i) % inverte o sinal do coeficiente 
         else
-            faux(i) = fx(i) % caso contr·rio, mantÈm o coef. igual 
+            faux(i) = fx(i) % caso contr√°rio, mant√©m o coef. igual 
         end
         
     end
@@ -67,7 +65,7 @@ elseif (lim == 'sup neg') % Limite Superior Negativo
     fx = faux
     
 else
-    fprintf('Comando Inv·lido')
+    fprintf('Comando Inv√°lido')
     break
 end
 
@@ -78,7 +76,7 @@ while fx(m) == 0 % Caso o a0 for zero, tira ele da conta
    
    for i=1:m-1
        
-       fx(i) = hx(i) % Retorna os valores de fx, exceto o ˙ltimo
+       fx(i) = hx(i) % Retorna os valores de fx, exceto o √∫ltimo
        
    end
    
@@ -88,12 +86,12 @@ end
 
 
 % Caso o termo de maior expoente seja negativo, inverte o sinal do
-% polinÙmio todo
+% polin√¥mio todo
 if (fx(1) < 0) 
     fx = -fx
 end
 
-% Define as vari·veis do Teorema de Lagrange
+% Define as vari√°veis do Teorema de Lagrange
 n = 0
 an = 0
 b = 0
@@ -115,7 +113,7 @@ for i=1:m
     end
 end
 
-if (b == 0) % Se n„o existir b n„o existem raizes positivas 
+if (b == 0) % Se n√£o existir b n√£o existem raizes positivas 
     fprintf('Nao ha raizes reais positivas')
     
 else
@@ -129,7 +127,7 @@ for i=1:m
    end
 end
 
-% Transforma os valores de n, an, b e k em mÛdulo 
+% Transforma os valores de n, an, b e k em m√≥dulo 
 n = abs(n)
 an = abs(an)
 b = abs(b)
@@ -159,4 +157,4 @@ fprintf('n = %.0f / an = %.0f / b = %.0f / k = %.0f \n', n, an, b, k)
 fprintf('lagrange = %.5f \n', lagrange)
 fprintf('L = %.5f', l)
 
-fx = gx % Retorna a funÁ„o original pra fx
+fx = gx % Retorna a fun√ß√£o original pra fx
