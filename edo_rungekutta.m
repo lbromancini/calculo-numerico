@@ -1,3 +1,5 @@
+% M√©todo de Rugen-Kutta
+
 % Inputs
 yn = input('insira o valor de yo: ');
 a = input('insira o valor de a: ');
@@ -5,9 +7,9 @@ b = input('insira o valor de b: ');
 h = input('insira o valor de h: ');
 
 syms x
-syms y % Declara x e y como vari·veis simbÛlicas
-f = input('Insira a funÁ„o: ');
-f = inline(f,'x','y'); % Transforma f em uma funÁ„o utiliz·vel
+syms y % Declara x e y como vari√°veis simb√≥licas
+f = input('Insira a fun√ß√£o: ');
+f = inline(f,'x','y'); % Transforma f em uma fun√ß√£o utiliz√°vel
 
 % Define o valor inicial de x0 como o menor valor, e x1 o maior
 if a<b
@@ -17,29 +19,29 @@ else if b<a
    xn=b;
    x1=a;
 else if a==b
-   fprintf('Valor inv·lido')
+   fprintf('Valor inv√°lido')
    return
    end
    end
 end
 
-% Calcula o n∞ de repetiÁıes
+% Calcula o n¬∞ de repeti√ß√µes
 n = (x1-xn)/h;
 
-ordem = input('Qual a ordem do mÈtodo que vc deseja calcular? ')
+ordem = input('Qual a ordem do m√©todo que vc deseja calcular? ')
 
 % Calcula o valor de y
 
 for i=1:n
 
-    if ordem == 1 % MÈtodo de Euler
+    if ordem == 1 % M√©todo de Euler
 
         fxy = f(xn, yn);
         yn = yn+(h*fxy)
 
         xn = xn+h
     
-    else if ordem == 2 % MÈtodo de Euler aperfeiÁoado
+    else if ordem == 2 % M√©todo de Euler aperfei√ßoado
                             
         fxy = f(xn, yn);
         k1 = fxy*h;
@@ -98,7 +100,7 @@ for i=1:n
         
     else
             
-        fprintf('Valor inv·lido')
+        fprintf('Valor inv√°lido')
         return
         
     end
@@ -107,6 +109,6 @@ for i=1:n
     end
 end
 
-fprintf('O valor de y È %.5f', yn) 
+fprintf('O valor de y √© %.5f', yn) 
 
 clear
