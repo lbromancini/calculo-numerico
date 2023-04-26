@@ -1,16 +1,18 @@
-% Entrada funÁ„o
+% Interpola√ß√£o quadr√°tica
+
+% Entrada fun√ß√£o
 
 syms x
-f = input('Insira a funÁ„o: ');
+f = input('Insira a fun√ß√£o: ');
 f = inline(f,'x');
 
 % Inputs
-k = input('insira a quantidade de iteraÁıes: ');
+k = input('insira a quantidade de itera√ß√µes: ');
 x1 = input('insira o valor de x1: ');
 x2 = input('insira o valor de x2: ');
 x3 = input('insira o valor de x3: ');
 
-% Atribuindo valores p funÁ„o
+% Atribuindo valores p fun√ß√£o
 fx1 = f(x1)
 fx2 = f(x2)
 fx3 = f(x3)
@@ -18,7 +20,7 @@ fx3 = f(x3)
 % Inicializando x4
 x4 = 0
 
-% LÛgica
+% L√≥gica
 for i=1:k
     
         x4 = x2-0.5*((((x2-x1)^2)*(fx2-fx3)-((x2-x3)^2)*(fx2-fx1))/((x2-x1)*(fx2-fx3)-(x2-x3)*(fx2-fx1)))
@@ -44,4 +46,4 @@ for i=1:k
         
 end
 
-fprintf('O valor de x4 È %.5f', x4)
+fprintf('O valor de x4 √© %.5f', x4)
