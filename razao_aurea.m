@@ -1,8 +1,10 @@
-% Entrada funÁ„o
-syms x
-f = input('Insira a funÁ„o: ');
+% Raz√£o √Åurea
 
-lim = input('Deseja calcular o limite m·ximo ou mÌnimo? ');
+% Entrada fun√ß√£o
+syms x
+f = input('Insira a fun√ß√£o: ');
+
+lim = input('Deseja calcular o limite m√°ximo ou m√≠nimo? ');
 
 f = inline(f,'x');
 
@@ -10,11 +12,11 @@ f = inline(f,'x');
 phi = (1+(5)^(1/2))/2;
 
 % Inputs
-k = input('insira a quantidade de iteraÁıes: ');
+k = input('insira a quantidade de itera√ß√µes: ');
 a = input('insira o valor de a: ');
 b = input('insira o valor de b: ');
 
-% C·lculos x1, x2 e d iniciais
+% C√°lculos x1, x2 e d iniciais
 
 d = (phi-1)*(b-a);
 x1 = a + d;
@@ -65,17 +67,17 @@ for i=1:k-1
     
 end
 
-% Imprime o valor m·ximo ou mÌnimo, dependendo da equaÁ„o 
+% Imprime o valor m√°ximo ou m√≠nimo, dependendo da equa√ß√£o 
 
 if lim == 'max'
     
     if x1 > x2
         
-        fprintf('O valor m·ximo È %.5f', x1)
+        fprintf('O valor m√°ximo √© %.5f', x1)
         
     else if x2 > x1
             
-        fprintf('O valor m·ximo È %.5f', x2)
+        fprintf('O valor m√°ximo √© %.5f', x2)
         
         end
     end
@@ -84,11 +86,11 @@ else if lim == 'min'
         
     if x1 < x2
         
-        fprintf('O valor mÌnimo È %.5f', x1)
+        fprintf('O valor m√≠nimo √© %.5f', x1)
         
     else if x2 < x1
             
-        fprintf('O valor mÌnimo È %.5f', x2)
+        fprintf('O valor m√≠nimo √© %.5f', x2)
         
         end
     end
