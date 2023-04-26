@@ -1,22 +1,19 @@
-% ex: 4b)
-% A = [3.333 15920 10.333; 2.222 16.71 9.612; -1.5611 5.1792 -1.6855]
-% b = [7953 ; 0.965 ; 2.714]
-% R: [1; 0,5; -1]
+% Pivoteamento parcial de matrizes
 
 A = input('Insira a matriz: ');
-A
+
 b = input('Insira os coeficientes: ' );
-b
+
 
 d = det(A);
 n = length(A);
 
-if (d ~= 0) % O sistema sÛ È v·lido quando o det for diferente de 0 
+if (d ~= 0) % O sistema s√≥ √© v√°lido quando o det for diferente de 0 
 
 
 for k=1 : n-1 
     
-    % Encontrando o pivÙ (max entre as linhas e colunas da matriz)
+    % Encontrando o piv√¥ (max entre as linhas e colunas da matriz)
     max = abs(A(k,k));
     L = k;
     for i=k+1 : n 
@@ -38,8 +35,8 @@ for k=1 : n-1
     b(k) = aux;
     end
 
-    % Realiza a eliminaÁ„o por Gauss
-    % escalonando com o multiplicador (elemento dividido pelo pivÙ)
+    % Realiza a elimina√ß√£o por Gauss
+    % escalonando com o multiplicador (elemento dividido pelo piv√¥)
     for i=k+1: n
     mult = A(i,k) / A(k,k);
     A(i,k) = 0;
@@ -65,7 +62,7 @@ for i=1 : n
     x(L) = (b(L)-soma) / A(L,L);
 end
 
-fprintf('A resultante È: \n')
+fprintf('A resultante √©: \n')
 fprintf('[ %.5f ]\n', x)
 
 clear
